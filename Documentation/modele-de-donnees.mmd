@@ -1,0 +1,58 @@
+erDiagram
+    UTILISATEUR ||--o{ CONSOLE_POSSEDEE : "possède"
+    UTILISATEUR ||--o{ JEU : "collectionne"
+    CONSOLE_CATALOGUE ||--o{ CONSOLE_POSSEDEE : "modèle de"
+    CONSOLE_CATALOGUE ||--o{ JEU : "plateforme de"
+    FICHE_RAWG ||--o{ JEU : "décrit"
+
+    UTILISATEUR {
+        string pseudo PK
+        string salt "sel aléatoire (hex)"
+        string hash "PBKDF2-SHA256"
+        date dateCreation
+    }
+    CONSOLE_CATALOGUE {
+        string id PK "ps2, n64…"
+        string nom
+        string fabricant
+        int annee
+        int generation
+        int rawgId "plateforme RAWG"
+        string[] modeles "Fat, Slim…"
+        object specs "cpu, mémoire, support, jeux"
+    }
+    CONSOLE_POSSEDEE {
+        string id PK
+        string consoleId FK
+        string modele
+        string etat
+        bool enBoite
+        string edition
+        string commentaire
+        date dateAjout
+    }
+    JEU {
+        string id PK
+        int rawgId FK
+        string consoleId FK
+        string statut "possede | recherche"
+        string region "PAL | NTSC-U | NTSC-J"
+        string format "cib | loose | blister"
+        object contenu "boite, notice, jeu"
+        string etat
+        float prix
+        date dateAchat
+        string lieu
+        int note "sur 10"
+        string commentaire
+        date dateAjout
+    }
+    FICHE_RAWG {
+        int id PK
+        string titre
+        string image
+        date sortie
+        string[] genres
+        string resume
+        string[] developpeurs
+    }

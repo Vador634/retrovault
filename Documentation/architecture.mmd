@@ -1,0 +1,29 @@
+flowchart LR
+    subgraph Navigateur
+        direction TB
+        P["Pages
+Login · Consoles · ConsoleGames
+Stats · Wishlist · Settings"]
+        C["Composants
+Modal · GameForm · QuickSearch…"]
+        S["Stores Zustand
+auth · collection · settings"]
+        L["lib/
+rawg.js · games.js · password.js"]
+        LS[("localStorage
+comptes · collections
+réglages · cache RAWG")]
+        J["data/consoles.json
+catalogue de 25 consoles"]
+    end
+    API["API RAWG
+api.rawg.io"]
+
+    P --> C
+    P --> S
+    C --> S
+    C --> L
+    S <-->|persist| LS
+    L <-->|cache 7-30 j| LS
+    P --> J
+    L -->|fetch + clé| API
