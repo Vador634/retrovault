@@ -65,7 +65,11 @@ export default function Stats() {
 
   const stats = useMemo(() => {
     const owned = jeux.filter((j) => j.statut === 'possede')
-    const count = (list, key) => list.reduce((acc, j) => ({ ...acc, [key(j)]: (acc[key(j)] ?? 0) + 1 }), {})
+    const count = (list, key) => {
+      const total = {}
+      for (const item of list) total[key(item)] = (total[key(item)] ?? 0) + 1
+      return total
+    }
 
     const perConsole = count(owned, (j) => j.consoleId)
     const perFormat = count(owned, (j) => j.format)

@@ -5,9 +5,10 @@
   "description": "Gestionnaire de collection de jeux vidéo rétro",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview --host"
+    "preview": "vite preview",
+    "test": "node --test"
   },
   "dependencies": {
     "framer-motion": "^14.14.0",

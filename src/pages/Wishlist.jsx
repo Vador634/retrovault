@@ -9,12 +9,12 @@ export default function Wishlist() {
   const { consoles, jeux } = useMyCollection()
   const navigate = useNavigate()
 
-  // Wishlist regroupée par console, dans l'ordre de "Mes consoles"
+  // Wishlist regroupée par console, dans l'ordre de "Mes consoles".
+  // Si on a deux exemplaires d'une console, on ne garde que le premier.
   const groups = useMemo(() => {
     const wanted = jeux.filter((j) => j.statut === 'recherche')
-    const seen = new Set()
-    return consoles
-      .filter((c) => !seen.has(c.consoleId) && seen.add(c.consoleId))
+    const firstOfEach = consoles.filter((c, i) => consoles.findIndex((o) => o.consoleId === c.consoleId) === i)
+    return firstOfEach
       .map((entry) => ({
         entry,
         console: getConsole(entry.consoleId),

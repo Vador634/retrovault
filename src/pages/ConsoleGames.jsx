@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { getConsole } from '../lib/consoles'
@@ -50,19 +50,18 @@ export default function ConsoleGames() {
   const entry = consoles.find((c) => c.id === entryId)
   const console = entry && getConsole(entry.consoleId)
 
-  const gamesOfConsole = useMemo(() => jeux.filter((j) => j.consoleId === entry?.consoleId), [jeux, entry?.consoleId])
+  const gamesOfConsole = jeux.filter((j) => j.consoleId === entry?.consoleId)
   const owned = gamesOfConsole.filter((j) => j.statut === 'possede')
   const wanted = gamesOfConsole.filter((j) => j.statut === 'recherche')
 
-  const visible = useMemo(() => {
-    const list = (tab === 'possede' ? owned : wanted).filter((j) => {
+  const visible = (tab === 'possede' ? owned : wanted)
+    .filter((j) => {
       if (region && j.region !== region) return false
       if (tab === 'possede' && completude === 'complet' && !isComplete(j)) return false
       if (tab === 'possede' && completude === 'incomplet' && isComplete(j)) return false
       return true
     })
-    return list.sort(TRIS[tri].compare)
-  }, [tab, owned, wanted, region, completude, tri])
+    .sort(TRIS[tri].compare)
 
   // Le jeu ouvert est dans l'URL (?jeu=...) : la recherche rapide peut l'ouvrir directement
   const openedId = searchParams.get('jeu')

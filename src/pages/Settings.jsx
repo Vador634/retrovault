@@ -43,7 +43,7 @@ function readBackup(text) {
 }
 
 export default function Settings() {
-  const { theme, crt, noteScale, setTheme, toggleCrt, setNoteScale } = useSettings()
+  const { theme, crt, noteScale, setTheme, setCrt, setNoteScale } = useSettings()
   const user = useCurrentUser()
   const collection = useMyCollection()
   const fileInput = useRef(null)
@@ -91,7 +91,7 @@ export default function Settings() {
             { value: false, label: 'Désactivé' },
           ]}
           value={crt}
-          onChange={(value) => value !== crt && toggleCrt()}
+          onChange={setCrt}
           columns={2}
         />
         <ChoiceGroup

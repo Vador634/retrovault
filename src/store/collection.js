@@ -27,11 +27,6 @@ export function useMyCollection() {
   return useCollection((s) => s.byUser[pseudo] ?? VIDE)
 }
 
-export function getMyCollection() {
-  const pseudo = useAuth.getState().current
-  return useCollection.getState().byUser[pseudo] ?? VIDE
-}
-
 function modifier(change) {
   const pseudo = useAuth.getState().current
   if (!pseudo) return

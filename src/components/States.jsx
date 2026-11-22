@@ -25,16 +25,6 @@ export function ErrorMessage({ children, onRetry }) {
   )
 }
 
-export function CardSkeleton() {
-  return (
-    <div>
-      <div className="skeleton aspect-[3/4] w-full" />
-      <div className="skeleton mt-2 h-3 w-3/4" />
-      <div className="skeleton mt-1.5 h-3 w-1/3" />
-    </div>
-  )
-}
-
 export function RowSkeleton() {
   return (
     <div className="flex gap-3">

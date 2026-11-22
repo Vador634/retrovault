@@ -1,5 +1,5 @@
 // Quelques icônes en SVG (tracés maison, style "trait"), pour éviter
-// d'ajouter toute une librairie juste pour 12 pictos.
+// d'ajouter toute une librairie juste pour une dizaine de pictos.
 const paths = {
   consoles: 'M6 9h12a4 4 0 0 1 4 4v1a4 4 0 0 1-7 2.6L13.5 15h-3L9 16.6A4 4 0 0 1 2 14v-1a4 4 0 0 1 4-4Zm1 2v4m-2-2h4m6.5-.5h.01m2 2h.01',
   stats: 'M4 20V10m6 10V4m6 16v-7m4 7H3',
@@ -13,17 +13,15 @@ const paths = {
   back: 'M15 18l-6-6 6-6',
   trash: 'M4 7h16M10 11v6m4-6v6M6 7l1 13h10l1-13M9 7V4h6v3',
   edit: 'M4 20h4L19 9l-4-4L4 16v4Zm9-13 4 4',
-  check: 'm5 12 5 5L20 7',
-  box: 'M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Zm0 0L12 12m0 0 9-4.5M12 12v9',
 }
 
-export default function Icon({ name, size = 20, className = '', filled = false }) {
+export default function Icon({ name, size = 20, className = '' }) {
   return (
     <svg
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      fill={filled ? 'currentColor' : 'none'}
+      fill="none"
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"

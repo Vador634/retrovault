@@ -19,7 +19,7 @@ export const useSettings = create(
         applyTheme(theme)
         set({ theme })
       },
-      toggleCrt: () => set((s) => ({ crt: !s.crt })),
+      setCrt: (crt) => set({ crt }),
       setNoteScale: (noteScale) => set({ noteScale }),
     }),
     { name: 'retrovault-reglages' },
