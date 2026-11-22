@@ -77,70 +77,73 @@ body::before {
   pointer-events: none;
 }
 
-.panel {
-  background: linear-gradient(160deg, var(--panel) 0%, color-mix(in srgb, var(--panel) 85%, var(--bg)) 100%);
-  border: 1px solid var(--line);
-  border-radius: 0.75rem;
-}
+/* Dans le layer "components" pour que les classes Tailwind (hidden, px-…) puissent les surcharger */
+@layer components {
+  .panel {
+    background: linear-gradient(160deg, var(--panel) 0%, color-mix(in srgb, var(--panel) 85%, var(--bg)) 100%);
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+  }
 
-.input {
-  width: 100%;
-  background: color-mix(in srgb, var(--bg) 70%, var(--panel));
-  border: 1px solid var(--line);
-  border-radius: 0.5rem;
-  padding: 0.7rem 0.85rem;
-  color: var(--ink-strong);
-  font-size: 1rem; /* 16px minimum, sinon iOS zoome sur le champ */
-  outline: none;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-.input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--glow);
-}
-.input::placeholder {
-  color: var(--muted);
-}
+  .input {
+    width: 100%;
+    background: color-mix(in srgb, var(--bg) 70%, var(--panel));
+    border: 1px solid var(--line);
+    border-radius: 0.5rem;
+    padding: 0.7rem 0.85rem;
+    color: var(--ink-strong);
+    font-size: 1rem; /* 16px minimum, sinon iOS zoome sur le champ */
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--glow);
+  }
+  .input::placeholder {
+    color: var(--muted);
+  }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  min-height: 2.75rem;
-  padding: 0 1.1rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  transition: filter 0.15s, transform 0.1s, background 0.15s;
-  user-select: none;
-}
-.btn:active {
-  transform: scale(0.97);
-}
-.btn:disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
-.btn-primary {
-  background: linear-gradient(90deg, #47bfff 0%, #1a44c2 100%);
-  color: #fff;
-}
-.btn-primary:hover {
-  filter: brightness(1.12);
-}
-.btn-ghost {
-  background: color-mix(in srgb, var(--panel-2) 55%, transparent);
-  color: var(--ink);
-}
-.btn-ghost:hover {
-  background: var(--panel-2);
-}
-.btn-danger {
-  background: #a3262a;
-  color: #fff;
-}
-.btn-danger:hover {
-  filter: brightness(1.15);
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0 1.1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: filter 0.15s, transform 0.1s, background 0.15s;
+    user-select: none;
+  }
+  .btn:active {
+    transform: scale(0.97);
+  }
+  .btn:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .btn-primary {
+    background: linear-gradient(90deg, #47bfff 0%, #1a44c2 100%);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    filter: brightness(1.12);
+  }
+  .btn-ghost {
+    background: color-mix(in srgb, var(--panel-2) 55%, transparent);
+    color: var(--ink);
+  }
+  .btn-ghost:hover {
+    background: var(--panel-2);
+  }
+  .btn-danger {
+    background: #a3262a;
+    color: #fff;
+  }
+  .btn-danger:hover {
+    filter: brightness(1.15);
+  }
 }
 
 /* Effet CRT : lignes horizontales très discrètes par-dessus tout l'écran */

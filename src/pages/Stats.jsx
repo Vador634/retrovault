@@ -37,7 +37,7 @@ function Tile({ label, value, detail, children }) {
 
 function ChartCard({ title, children, className = '' }) {
   return (
-    <div className={`panel p-4 ${className}`}>
+    <div className={`panel min-w-0 p-4 ${className}`}>
       <h2 className="mb-3 font-semibold text-ink-strong">{title}</h2>
       {children}
     </div>
@@ -162,7 +162,7 @@ export default function Stats() {
                     innerRadius="58%"
                     outerRadius="100%"
                     stroke={colors.panel}
-                    strokeWidth={2}
+                    strokeWidth={stats.byFormat.length > 1 ? 2 : 0}
                     isAnimationActive={false}
                   >
                     {stats.byFormat.map((d) => (

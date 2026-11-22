@@ -1,150 +1,150 @@
 [
   {
-    "id": "nes", "nom": "NES", "fabricant": "Nintendo", "annee": 1985, "generation": 3,
+    "id": "nes", "nom": "NES", "sigle": "NES", "fabricant": "Nintendo", "annee": 1985, "generation": 3,
     "rawgId": 49, "couleur": "#c62828", "forme": "salon",
     "modeles": ["NES (original)", "NES Top Loader", "Famicom", "AV Famicom"],
     "specs": { "cpu": "Ricoh 2A03 (6502) 1,79 MHz", "memoire": "2 Ko RAM", "support": "Cartouche", "jeux": "~715" }
   },
   {
-    "id": "snes", "nom": "Super Nintendo", "fabricant": "Nintendo", "annee": 1990, "generation": 4,
+    "id": "snes", "nom": "Super Nintendo", "sigle": "SNES", "fabricant": "Nintendo", "annee": 1990, "generation": 4,
     "rawgId": 79, "couleur": "#6a4c93", "forme": "salon",
     "modeles": ["SNES PAL", "SNES US (violette)", "Super Famicom", "SNES Mini (2017)"],
     "specs": { "cpu": "Ricoh 5A22 3,58 MHz", "memoire": "128 Ko RAM", "support": "Cartouche", "jeux": "~1 750" }
   },
   {
-    "id": "n64", "nom": "Nintendo 64", "fabricant": "Nintendo", "annee": 1996, "generation": 5,
+    "id": "n64", "nom": "Nintendo 64", "sigle": "N64", "fabricant": "Nintendo", "annee": 1996, "generation": 5,
     "rawgId": 83, "couleur": "#2e7d32", "forme": "salon",
     "modeles": ["Grise standard", "Funtastic (couleur)", "Pikachu Edition", "Japonaise"],
     "specs": { "cpu": "NEC VR4300 93,75 MHz", "memoire": "4 Mo (8 Mo avec Expansion Pak)", "support": "Cartouche", "jeux": "~390" }
   },
   {
-    "id": "gamecube", "nom": "GameCube", "fabricant": "Nintendo", "annee": 2001, "generation": 6,
+    "id": "gamecube", "nom": "GameCube", "sigle": "GC", "fabricant": "Nintendo", "annee": 2001, "generation": 6,
     "rawgId": 105, "couleur": "#5e35b1", "forme": "salon",
     "modeles": ["DOL-001 (avec port numérique)", "DOL-101 (sans port numérique)", "Panasonic Q"],
     "specs": { "cpu": "IBM Gekko 486 MHz", "memoire": "24 Mo + 16 Mo", "support": "Mini-DVD 8 cm", "jeux": "~650" }
   },
   {
-    "id": "wii", "nom": "Wii", "fabricant": "Nintendo", "annee": 2006, "generation": 7,
+    "id": "wii", "nom": "Wii", "sigle": "Wii", "fabricant": "Nintendo", "annee": 2006, "generation": 7,
     "rawgId": 11, "couleur": "#90a4ae", "forme": "salon",
     "modeles": ["RVL-001 (rétrocompatible GC)", "RVL-101 Family Edition", "Wii Mini"],
     "specs": { "cpu": "IBM Broadway 729 MHz", "memoire": "88 Mo", "support": "DVD Wii", "jeux": "~1 600" }
   },
   {
-    "id": "gameboy", "nom": "Game Boy", "fabricant": "Nintendo", "annee": 1989, "generation": 4,
+    "id": "gameboy", "nom": "Game Boy", "sigle": "GB", "fabricant": "Nintendo", "annee": 1989, "generation": 4,
     "rawgId": 26, "couleur": "#8d9a6b", "forme": "portable",
     "modeles": ["DMG (original)", "Pocket", "Light", "Play It Loud!"],
     "specs": { "cpu": "Sharp LR35902 4,19 MHz", "memoire": "8 Ko RAM", "support": "Cartouche", "jeux": "~1 050" }
   },
   {
-    "id": "gbc", "nom": "Game Boy Color", "fabricant": "Nintendo", "annee": 1998, "generation": 5,
+    "id": "gbc", "nom": "Game Boy Color", "sigle": "GBC", "fabricant": "Nintendo", "annee": 1998, "generation": 5,
     "rawgId": 43, "couleur": "#d81b60", "forme": "portable",
     "modeles": ["Standard (couleurs variées)", "Pokémon Edition", "Transparente"],
     "specs": { "cpu": "Sharp LR35902 8 MHz", "memoire": "32 Ko RAM", "support": "Cartouche", "jeux": "~900" }
   },
   {
-    "id": "gba", "nom": "Game Boy Advance", "fabricant": "Nintendo", "annee": 2001, "generation": 6,
+    "id": "gba", "nom": "Game Boy Advance", "sigle": "GBA", "fabricant": "Nintendo", "annee": 2001, "generation": 6,
     "rawgId": 24, "couleur": "#3949ab", "forme": "portable",
     "modeles": ["AGB-001 (original)", "SP AGS-001 (frontlight)", "SP AGS-101 (backlight)", "Micro"],
     "specs": { "cpu": "ARM7TDMI 16,8 MHz", "memoire": "256 Ko + 32 Ko RAM", "support": "Cartouche", "jeux": "~1 500" }
   },
   {
-    "id": "ds", "nom": "Nintendo DS", "fabricant": "Nintendo", "annee": 2004, "generation": 7,
+    "id": "ds", "nom": "Nintendo DS", "sigle": "DS", "fabricant": "Nintendo", "annee": 2004, "generation": 7,
     "rawgId": 9, "couleur": "#78909c", "forme": "portable",
     "modeles": ["DS (Fat)", "DS Lite", "DSi", "DSi XL"],
     "specs": { "cpu": "ARM946E-S 67 MHz + ARM7", "memoire": "4 Mo", "support": "Cartouche DS", "jeux": "~2 000" }
   },
   {
-    "id": "3ds", "nom": "Nintendo 3DS", "fabricant": "Nintendo", "annee": 2011, "generation": 8,
+    "id": "3ds", "nom": "Nintendo 3DS", "sigle": "3DS", "fabricant": "Nintendo", "annee": 2011, "generation": 8,
     "rawgId": 8, "couleur": "#00897b", "forme": "portable",
     "modeles": ["3DS", "3DS XL", "2DS", "New 3DS", "New 3DS XL", "New 2DS XL"],
     "specs": { "cpu": "ARM11 268 MHz (bi-cœur)", "memoire": "128 Mo", "support": "Cartouche 3DS", "jeux": "~1 400" }
   },
   {
-    "id": "mastersystem", "nom": "Master System", "fabricant": "Sega", "annee": 1986, "generation": 3,
+    "id": "mastersystem", "nom": "Master System", "sigle": "SMS", "fabricant": "Sega", "annee": 1986, "generation": 3,
     "rawgId": 74, "couleur": "#212121", "forme": "salon",
     "modeles": ["Master System I", "Master System II", "Mark III"],
     "specs": { "cpu": "Zilog Z80 3,58 MHz", "memoire": "8 Ko RAM", "support": "Cartouche / Carte Sega", "jeux": "~320" }
   },
   {
-    "id": "megadrive", "nom": "Mega Drive", "fabricant": "Sega", "annee": 1988, "generation": 4,
+    "id": "megadrive", "nom": "Mega Drive", "sigle": "MD", "fabricant": "Sega", "annee": 1988, "generation": 4,
     "rawgId": 167, "couleur": "#1a1a1a", "forme": "salon",
     "modeles": ["Mega Drive I", "Mega Drive II", "Genesis (US)", "Nomad (portable)"],
     "specs": { "cpu": "Motorola 68000 7,6 MHz", "memoire": "64 Ko RAM", "support": "Cartouche", "jeux": "~900" }
   },
   {
-    "id": "saturn", "nom": "Saturn", "fabricant": "Sega", "annee": 1994, "generation": 5,
+    "id": "saturn", "nom": "Saturn", "sigle": "SAT", "fabricant": "Sega", "annee": 1994, "generation": 5,
     "rawgId": 107, "couleur": "#455a64", "forme": "salon",
     "modeles": ["Modèle 1 (boutons ovales)", "Modèle 2 (boutons ronds)", "Saturn blanche (JP)"],
     "specs": { "cpu": "2× Hitachi SH-2 28,6 MHz", "memoire": "2 Mo RAM", "support": "CD-ROM", "jeux": "~1 000" }
   },
   {
-    "id": "dreamcast", "nom": "Dreamcast", "fabricant": "Sega", "annee": 1998, "generation": 6,
+    "id": "dreamcast", "nom": "Dreamcast", "sigle": "DC", "fabricant": "Sega", "annee": 1998, "generation": 6,
     "rawgId": 106, "couleur": "#f57c00", "forme": "salon",
     "modeles": ["PAL (logo bleu)", "US (logo orange)", "Japonaise", "Edition limitée"],
     "specs": { "cpu": "Hitachi SH-4 200 MHz", "memoire": "16 Mo RAM", "support": "GD-ROM", "jeux": "~620" }
   },
   {
-    "id": "gamegear", "nom": "Game Gear", "fabricant": "Sega", "annee": 1990, "generation": 4,
+    "id": "gamegear", "nom": "Game Gear", "sigle": "GG", "fabricant": "Sega", "annee": 1990, "generation": 4,
     "rawgId": 77, "couleur": "#37474f", "forme": "portable",
     "modeles": ["Game Gear noire", "Game Gear couleur (bleue, rouge…)", "Majesco (rééd. US)"],
     "specs": { "cpu": "Zilog Z80 3,58 MHz", "memoire": "8 Ko RAM", "support": "Cartouche", "jeux": "~390" }
   },
   {
-    "id": "ps1", "nom": "PlayStation", "fabricant": "Sony", "annee": 1994, "generation": 5,
+    "id": "ps1", "nom": "PlayStation", "sigle": "PS1", "fabricant": "Sony", "annee": 1994, "generation": 5,
     "rawgId": 27, "couleur": "#9e9e9e", "forme": "salon",
     "modeles": ["SCPH-1002 (premier modèle)", "SCPH-7502", "PSone (Slim)", "Net Yaroze"],
     "specs": { "cpu": "MIPS R3000A 33,8 MHz", "memoire": "2 Mo RAM", "support": "CD-ROM", "jeux": "~4 100" }
   },
   {
-    "id": "ps2", "nom": "PlayStation 2", "fabricant": "Sony", "annee": 2000, "generation": 6,
+    "id": "ps2", "nom": "PlayStation 2", "sigle": "PS2", "fabricant": "Sony", "annee": 2000, "generation": 6,
     "rawgId": 15, "couleur": "#1565c0", "forme": "salon",
     "modeles": ["Fat", "Slim", "Slim 9000x", "Fat argentée (Satin Silver)"],
     "specs": { "cpu": "Emotion Engine 294 MHz", "memoire": "32 Mo RAM", "support": "DVD / CD", "jeux": "~4 000" }
   },
   {
-    "id": "ps3", "nom": "PlayStation 3", "fabricant": "Sony", "annee": 2006, "generation": 7,
+    "id": "ps3", "nom": "PlayStation 3", "sigle": "PS3", "fabricant": "Sony", "annee": 2006, "generation": 7,
     "rawgId": 16, "couleur": "#263238", "forme": "salon",
     "modeles": ["Fat (rétrocompatible PS2)", "Fat", "Slim", "Super Slim"],
     "specs": { "cpu": "Cell Broadband Engine 3,2 GHz", "memoire": "256 Mo + 256 Mo vidéo", "support": "Blu-ray", "jeux": "~2 500" }
   },
   {
-    "id": "psp", "nom": "PSP", "fabricant": "Sony", "annee": 2004, "generation": 7,
+    "id": "psp", "nom": "PSP", "sigle": "PSP", "fabricant": "Sony", "annee": 2004, "generation": 7,
     "rawgId": 17, "couleur": "#424242", "forme": "portable",
     "modeles": ["PSP 1000 (Fat)", "PSP 2000 (Slim)", "PSP 3000", "PSP Go", "PSP Street (E1000)"],
     "specs": { "cpu": "MIPS R4000 333 MHz", "memoire": "32 Mo (64 Mo dès la 2000)", "support": "UMD", "jeux": "~1 900" }
   },
   {
-    "id": "psvita", "nom": "PS Vita", "fabricant": "Sony", "annee": 2011, "generation": 8,
+    "id": "psvita", "nom": "PS Vita", "sigle": "VITA", "fabricant": "Sony", "annee": 2011, "generation": 8,
     "rawgId": 19, "couleur": "#0d47a1", "forme": "portable",
     "modeles": ["PCH-1000 (OLED)", "PCH-2000 (Slim LCD)", "PS TV"],
     "specs": { "cpu": "ARM Cortex-A9 quadri-cœur", "memoire": "512 Mo + 128 Mo vidéo", "support": "Carte PS Vita", "jeux": "~1 500" }
   },
   {
-    "id": "xbox", "nom": "Xbox", "fabricant": "Microsoft", "annee": 2001, "generation": 6,
+    "id": "xbox", "nom": "Xbox", "sigle": "XBOX", "fabricant": "Microsoft", "annee": 2001, "generation": 6,
     "rawgId": 80, "couleur": "#388e3c", "forme": "salon",
     "modeles": ["Noire standard", "Crystal (transparente)", "Edition Halo"],
     "specs": { "cpu": "Intel Pentium III 733 MHz", "memoire": "64 Mo RAM", "support": "DVD", "jeux": "~1 000" }
   },
   {
-    "id": "xbox360", "nom": "Xbox 360", "fabricant": "Microsoft", "annee": 2005, "generation": 7,
+    "id": "xbox360", "nom": "Xbox 360", "sigle": "X360", "fabricant": "Microsoft", "annee": 2005, "generation": 7,
     "rawgId": 14, "couleur": "#7cb342", "forme": "salon",
     "modeles": ["Fat (Arcade / Pro / Elite)", "Slim (S)", "E"],
     "specs": { "cpu": "IBM Xenon 3,2 GHz (tri-cœur)", "memoire": "512 Mo", "support": "DVD", "jeux": "~2 100" }
   },
   {
-    "id": "neogeo", "nom": "Neo Geo", "fabricant": "SNK", "annee": 1990, "generation": 4,
+    "id": "neogeo", "nom": "Neo Geo", "sigle": "NEO", "fabricant": "SNK", "annee": 1990, "generation": 4,
     "rawgId": 12, "couleur": "#b71c1c", "forme": "salon",
     "modeles": ["Neo Geo AES", "Neo Geo CD", "Neo Geo CDZ", "Neo Geo Pocket Color"],
     "specs": { "cpu": "Motorola 68000 12 MHz + Z80", "memoire": "64 Ko RAM", "support": "Cartouche / CD", "jeux": "~150" }
   },
   {
-    "id": "atari2600", "nom": "Atari 2600", "fabricant": "Atari", "annee": 1977, "generation": 2,
+    "id": "atari2600", "nom": "Atari 2600", "sigle": "2600", "fabricant": "Atari", "annee": 1977, "generation": 2,
     "rawgId": 23, "couleur": "#6d4c41", "forme": "salon",
     "modeles": ["Heavy Sixer", "Light Sixer", "Four-switch (boisé)", "Junior"],
     "specs": { "cpu": "MOS 6507 1,19 MHz", "memoire": "128 octets RAM", "support": "Cartouche", "jeux": "~550" }
   },
   {
-    "id": "switch", "nom": "Nintendo Switch", "fabricant": "Nintendo", "annee": 2017, "generation": 8,
+    "id": "switch", "nom": "Nintendo Switch", "sigle": "NSW", "fabricant": "Nintendo", "annee": 2017, "generation": 8,
     "rawgId": 7, "couleur": "#e60012", "forme": "hybride",
     "modeles": ["Switch V1", "Switch V2 (meilleure batterie)", "Switch OLED", "Switch Lite"],
     "specs": { "cpu": "Nvidia Tegra X1", "memoire": "4 Go", "support": "Carte de jeu", "jeux": "~5 000+" }

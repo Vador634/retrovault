@@ -69,6 +69,7 @@ export default function ConsoleArt({ console, className = '' }) {
       <span className="absolute left-2 top-2 font-pixel text-[0.45rem] uppercase tracking-wider text-white/70">
         {console.fabricant}
       </span>
+      <span className="absolute bottom-1.5 right-2 font-pixel text-[0.6rem] text-white/85 drop-shadow">{console.sigle}</span>
 
       {hasPhoto && (
         <img
