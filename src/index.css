@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+/*
+  Les couleurs passent par des variables CSS pour pouvoir basculer
+  entre le thème sombre (style Steam) et le thème clair sans dupliquer
+  toutes les classes Tailwind.
+*/
+:root {
+  --bg: #171a21;
+  --panel: #1b2838;
+  --panel-2: #2a475e;
+  --accent: #66c0f4;
+  --accent-strong: #1a9fff;
+  --ink: #c7d5e0;
+  --ink-strong: #ffffff;
+  --muted: #8f98a0;
+  --line: rgba(102, 192, 244, 0.15);
+  --glow: rgba(102, 192, 244, 0.35);
+  /* couleurs des graphiques (testées pour le daltonisme sur ce fond) */
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  color-scheme: dark;
+}
+
+[data-theme='clair'] {
+  --bg: #e7edf3;
+  --panel: #ffffff;
+  --panel-2: #d3e1ec;
+  --accent: #1a73b8;
+  --accent-strong: #0b5c9e;
+  --ink: #23313f;
+  --ink-strong: #0e1620;
+  --muted: #5d6c7b;
+  --line: rgba(26, 115, 184, 0.18);
+  --glow: rgba(26, 115, 184, 0.25);
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-ink: var(--ink);
+  --color-ink-strong: var(--ink-strong);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-pixel: 'Press Start 2P', monospace;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  min-height: 100dvh;
+}
+
+/* Petit dégradé de fond, comme sur la page magasin de Steam */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at top, var(--panel-2) 0%, transparent 60%);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.panel {
+  background: linear-gradient(160deg, var(--panel) 0%, color-mix(in srgb, var(--panel) 85%, var(--bg)) 100%);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+}
+
+.input {
+  width: 100%;
+  background: color-mix(in srgb, var(--bg) 70%, var(--panel));
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.7rem 0.85rem;
+  color: var(--ink-strong);
+  font-size: 1rem; /* 16px minimum, sinon iOS zoome sur le champ */
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--glow);
+}
+.input::placeholder {
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0 1.1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: filter 0.15s, transform 0.1s, background 0.15s;
+  user-select: none;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.btn-primary {
+  background: linear-gradient(90deg, #47bfff 0%, #1a44c2 100%);
+  color: #fff;
+}
+.btn-primary:hover {
+  filter: brightness(1.12);
+}
+.btn-ghost {
+  background: color-mix(in srgb, var(--panel-2) 55%, transparent);
+  color: var(--ink);
+}
+.btn-ghost:hover {
+  background: var(--panel-2);
+}
+.btn-danger {
+  background: #a3262a;
+  color: #fff;
+}
+.btn-danger:hover {
+  filter: brightness(1.15);
+}
+
+/* Effet CRT : lignes horizontales très discrètes par-dessus tout l'écran */
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.09) 3px
+  );
+  mix-blend-mode: multiply;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--panel-2) 40%, transparent) 0%,
+    color-mix(in srgb, var(--panel-2) 80%, transparent) 50%,
+    color-mix(in srgb, var(--panel-2) 40%, transparent) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.3s infinite linear;
+  border-radius: 0.5rem;
+}
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.blink {
+  animation: blink 1.1s steps(1) infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton,
+  .blink {
+    animation: none;
+  }
+}

@@ -1,0 +1,10 @@
+node_modules
+dist
+.env
+.env.local
+*.log
+.DS_Store
+Thumbs.db
+
+# photos perso des consoles (on garde juste le dossier)
+public/consoles/*.jpg
