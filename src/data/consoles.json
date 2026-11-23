@@ -30,6 +30,12 @@
     "specs": { "cpu": "IBM Broadway 729 MHz", "memoire": "88 Mo", "support": "DVD Wii", "jeux": "~1 600" }
   },
   {
+    "id": "wiiu", "nom": "Wii U", "sigle": "WiiU", "fabricant": "Nintendo", "annee": 2012, "generation": 8,
+    "rawgId": 10, "couleur": "#009ac7", "forme": "salon",
+    "modeles": ["Basic (blanche, 8 Go)", "Premium (noire, 32 Go)", "Edition Mario Kart 8", "Edition Zelda Wind Waker"],
+    "specs": { "cpu": "IBM Espresso 3 cœurs 1,24 GHz", "memoire": "2 Go", "support": "Disque Wii U (25 Go)", "jeux": "~800" }
+  },
+  {
     "id": "gameboy", "nom": "Game Boy", "sigle": "GB", "fabricant": "Nintendo", "annee": 1989, "generation": 4,
     "rawgId": 26, "couleur": "#8d9a6b", "forme": "portable",
     "modeles": ["DMG (original)", "Pocket", "Light", "Play It Loud!"],
@@ -108,6 +114,12 @@
     "specs": { "cpu": "Cell Broadband Engine 3,2 GHz", "memoire": "256 Mo + 256 Mo vidéo", "support": "Blu-ray", "jeux": "~2 500" }
   },
   {
+    "id": "ps4", "nom": "PlayStation 4", "sigle": "PS4", "fabricant": "Sony", "annee": 2013, "generation": 8,
+    "rawgId": 18, "couleur": "#003791", "forme": "salon",
+    "modeles": ["Fat (CUH-1000 / 1100 / 1200)", "Slim (CUH-2000)", "Pro (CUH-7000)", "Edition limitée"],
+    "specs": { "cpu": "AMD Jaguar 8 cœurs 1,6 GHz", "memoire": "8 Go GDDR5", "support": "Blu-ray", "jeux": "~4 000" }
+  },
+  {
     "id": "psp", "nom": "PSP", "sigle": "PSP", "fabricant": "Sony", "annee": 2004, "generation": 7,
     "rawgId": 17, "couleur": "#424242", "forme": "portable",
     "modeles": ["PSP 1000 (Fat)", "PSP 2000 (Slim)", "PSP 3000", "PSP Go", "PSP Street (E1000)"],
@@ -130,6 +142,12 @@
     "rawgId": 14, "couleur": "#7cb342", "forme": "salon",
     "modeles": ["Fat (Arcade / Pro / Elite)", "Slim (S)", "E"],
     "specs": { "cpu": "IBM Xenon 3,2 GHz (tri-cœur)", "memoire": "512 Mo", "support": "DVD", "jeux": "~2 100" }
+  },
+  {
+    "id": "xboxone", "nom": "Xbox One", "sigle": "XB1", "fabricant": "Microsoft", "annee": 2013, "generation": 8,
+    "rawgId": 1, "couleur": "#107c10", "forme": "salon",
+    "modeles": ["Xbox One (originale)", "Xbox One S", "Xbox One S All-Digital", "Xbox One X"],
+    "specs": { "cpu": "AMD Jaguar 8 cœurs 1,75 GHz", "memoire": "8 Go DDR3", "support": "Blu-ray", "jeux": "~3 000" }
   },
   {
     "id": "neogeo", "nom": "Neo Geo", "sigle": "NEO", "fabricant": "SNK", "annee": 1990, "generation": 4,

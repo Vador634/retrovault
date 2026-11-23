@@ -1,5 +1,0 @@
-Dépose ici tes propres photos de consoles, nommées avec l'id de la console :
-  ps2.jpg, n64.jpg, gameboy.jpg ...
-(la liste des id est dans src/data/consoles.json)
-
-Si une photo existe, elle remplace l'icône dessinée automatiquement.

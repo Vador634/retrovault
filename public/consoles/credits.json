@@ -1,0 +1,198 @@
+[
+  {
+    "id": "nes",
+    "fichier": "Nintendo-Entertainment-System-NES-Console-FL.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Nintendo-Entertainment-System-NES-Console-FL.jpg"
+  },
+  {
+    "id": "snes",
+    "fichier": "SNES-Mod1-Console-Set.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:SNES-Mod1-Console-Set.jpg"
+  },
+  {
+    "id": "n64",
+    "fichier": "N64-Console-Set.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:N64-Console-Set.jpg"
+  },
+  {
+    "id": "gamecube",
+    "fichier": "GameCube-Set.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:GameCube-Set.jpg"
+  },
+  {
+    "id": "wii",
+    "fichier": "Wii-console.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Wii-console.jpg"
+  },
+  {
+    "id": "gameboy",
+    "fichier": "Game-Boy-FL.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Game-Boy-FL.jpg"
+  },
+  {
+    "id": "gbc",
+    "fichier": "Nintendo-Game-Boy-Color-FL.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Nintendo-Game-Boy-Color-FL.jpg"
+  },
+  {
+    "id": "gba",
+    "fichier": "Nintendo-Game-Boy-Advance-Purple-FL.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Nintendo-Game-Boy-Advance-Purple-FL.jpg"
+  },
+  {
+    "id": "ds",
+    "fichier": "Nintendo-DS-Fat-Blue.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Nintendo-DS-Fat-Blue.jpg"
+  },
+  {
+    "id": "3ds",
+    "fichier": "Nintendo-3DS-AquaOpen.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Nintendo-3DS-AquaOpen.jpg"
+  },
+  {
+    "id": "mastersystem",
+    "fichier": "Sega-Master-System-Set.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Sega-Master-System-Set.jpg"
+  },
+  {
+    "id": "megadrive",
+    "fichier": "Sega-Genesis-Mk2-6button.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sega-Genesis-Mk2-6button.jpg"
+  },
+  {
+    "id": "saturn",
+    "fichier": "Sega-Saturn-Console-Set-Mk1.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Sega-Saturn-Console-Set-Mk1.jpg"
+  },
+  {
+    "id": "dreamcast",
+    "fichier": "Dreamcast-Console-Set.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Dreamcast-Console-Set.jpg"
+  },
+  {
+    "id": "gamegear",
+    "fichier": "Game-Gear-Handheld.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Game-Gear-Handheld.jpg"
+  },
+  {
+    "id": "ps1",
+    "fichier": "PSX-Console-wController.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:PSX-Console-wController.jpg"
+  },
+  {
+    "id": "ps2",
+    "fichier": "PS2-Fat-Console-Set.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:PS2-Fat-Console-Set.jpg"
+  },
+  {
+    "id": "ps3",
+    "fichier": "Sony-PlayStation-3-CECHA01-wController-L.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Sony-PlayStation-3-CECHA01-wController-L.jpg"
+  },
+  {
+    "id": "psp",
+    "fichier": "Psp-1000.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Psp-1000.jpg"
+  },
+  {
+    "id": "psvita",
+    "fichier": "PlayStation-Vita-1101-FL.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:PlayStation-Vita-1101-FL.jpg"
+  },
+  {
+    "id": "xbox",
+    "fichier": "Xbox-console.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Xbox-console.jpg"
+  },
+  {
+    "id": "xbox360",
+    "fichier": "Xbox-360-Pro-wController.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Xbox-360-Pro-wController.jpg"
+  },
+  {
+    "id": "neogeo",
+    "fichier": "Neo-Geo-AES-Console-Set.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Neo-Geo-AES-Console-Set.jpg"
+  },
+  {
+    "id": "atari2600",
+    "fichier": "Atari-2600-Wood-4Sw-Set.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Atari-2600-Wood-4Sw-Set.jpg"
+  },
+  {
+    "id": "switch",
+    "fichier": "Nintendo-Switch-wJoyCons-BlRd-Standing-FL.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Nintendo-Switch-wJoyCons-BlRd-Standing-FL.jpg"
+  },
+  {
+    "id": "ps4",
+    "fichier": "PS4-Console-wDS4.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:PS4-Console-wDS4.jpg"
+  },
+  {
+    "id": "xboxone",
+    "fichier": "Microsoft-Xbox-One-Console-Set-wKinect.jpg",
+    "auteur": "Evan-Amos",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Microsoft-Xbox-One-Console-Set-wKinect.jpg"
+  },
+  {
+    "id": "wiiu",
+    "fichier": "Wii_U_Console_and_Gamepad.png",
+    "auteur": "Takimata　(edited by:Tokyoship)",
+    "licence": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Wii_U_Console_and_Gamepad.png"
+  }
+]

@@ -5,6 +5,3 @@ dist
 *.log
 .DS_Store
 Thumbs.db
-
-# photos perso des consoles (on garde juste le dossier)
-public/consoles/*.jpg
