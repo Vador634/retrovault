@@ -52,6 +52,14 @@ export function modifierConsole(id, data) {
   }))
 }
 
+/** Nouvel ordre choisi à la main (glisser-déposer sur la page Mes consoles) */
+export function reordonnerConsoles(ids) {
+  modifier((col) => ({
+    ...col,
+    consoles: ids.map((id) => col.consoles.find((c) => c.id === id)).filter(Boolean),
+  }))
+}
+
 /**
  * Si on retire le dernier exemplaire d'une console, ses jeux n'auraient
  * plus de page où s'afficher : on les retire avec.

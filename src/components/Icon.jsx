@@ -13,6 +13,7 @@ const paths = {
   back: 'M15 18l-6-6 6-6',
   trash: 'M4 7h16M10 11v6m4-6v6M6 7l1 13h10l1-13M9 7V4h6v3',
   edit: 'M4 20h4L19 9l-4-4L4 16v4Zm9-13 4 4',
+  move: 'M12 3v18M3 12h18M12 3 9 6m3-3 3 3M12 21l-3-3m3 3 3-3M3 12l3-3m-3 3 3 3M21 12l-3-3m3 3-3 3',
 }
 
 export default function Icon({ name, size = 20, className = '' }) {
