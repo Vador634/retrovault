@@ -28,7 +28,7 @@ function Tile({ label, value, detail, children }) {
   return (
     <div className="panel p-4">
       <p className="text-xs uppercase tracking-wide text-muted">{label}</p>
-      <p className="mt-1 font-pixel text-base leading-relaxed text-ink-strong sm:text-lg">{value}</p>
+      <p className="mt-1 font-display text-xl font-bold text-ink-strong sm:text-2xl">{value}</p>
       {detail && <p className="text-xs text-muted">{detail}</p>}
       {children}
     </div>
@@ -100,8 +100,8 @@ export default function Stats() {
   if (stats.owned.length === 0) {
     return (
       <section>
-        <h1 className="mb-5 font-pixel text-sm leading-relaxed text-ink-strong sm:text-base">Statistiques</h1>
-        <EmptyState title="Pas encore de stats" icon="📊">
+        <h1 className="mb-5 page-title">Statistiques</h1>
+        <EmptyState title="Pas encore de stats">
           Ajoute quelques jeux à ta collection pour voir apparaître les graphiques.{' '}
           <Link to="/" className="text-accent underline">
             Mes consoles
@@ -122,7 +122,7 @@ export default function Stats() {
 
   return (
     <section className="space-y-4">
-      <h1 className="font-pixel text-sm leading-relaxed text-ink-strong sm:text-base">Statistiques</h1>
+      <h1 className="page-title">Statistiques</h1>
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <Tile label="Jeux possédés" value={stats.owned.length} detail={`sur ${consoles.length} console${consoles.length > 1 ? 's' : ''}`} />
@@ -216,7 +216,7 @@ export default function Stats() {
               {stats.top.map((game, i) => (
                 <li key={game.id}>
                   <button className="flex w-full items-center gap-3 rounded-lg p-1.5 text-left hover:bg-panel-2/60" onClick={() => openGame(game)}>
-                    <span className="w-5 shrink-0 text-center font-pixel text-[0.6rem] text-accent">{i + 1}</span>
+                    <span className="w-5 shrink-0 text-center font-display text-sm font-bold text-accent">{i + 1}</span>
                     <Cover src={game.image} title={game.titre} className="h-12 w-10 shrink-0 rounded" />
                     <span className="min-w-0 flex-1">
                       <span className="block truncate font-semibold text-ink-strong">{game.titre}</span>

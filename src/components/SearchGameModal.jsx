@@ -91,7 +91,7 @@ export default function SearchGameModal({ console, onClose }) {
       genres: picked.genres,
       ...data,
     })
-    toast(data.statut === 'recherche' ? `${picked.titre} ajouté à la wishlist ⭐` : `${picked.titre} ajouté !`)
+    toast(data.statut === 'recherche' ? `${picked.titre} ajouté à la wishlist` : `${picked.titre} ajouté !`)
     onClose()
   }
 

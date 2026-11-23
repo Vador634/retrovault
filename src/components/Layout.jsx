@@ -4,6 +4,7 @@ import { useAuth, useCurrentUser } from '../store/auth'
 import { useToasts } from '../store/toast'
 import QuickSearch from './QuickSearch'
 import Icon from './Icon'
+import Logo from './Logo'
 
 const links = [
   { to: '/', label: 'Mes consoles', icon: 'consoles', end: true },
@@ -11,14 +12,6 @@ const links = [
   { to: '/wishlist', label: 'Wishlist', icon: 'star' },
   { to: '/reglages', label: 'Réglages', icon: 'settings' },
 ]
-
-function Logo() {
-  return (
-    <NavLink to="/" className="shrink-0 font-pixel text-[0.7rem] leading-none text-ink-strong sm:text-sm">
-      Retro<span className="text-accent">Vault</span>
-    </NavLink>
-  )
-}
 
 function Toasts() {
   const list = useToasts((s) => s.list)
@@ -31,7 +24,7 @@ function Toasts() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
-            className={`rounded-full px-4 py-2 text-sm font-semibold shadow-lg ${
+            className={`rounded-[var(--radius-btn)] px-4 py-2 text-sm font-semibold shadow-lg ${
               t.type === 'erreur' ? 'bg-[#a3262a] text-white' : 'bg-accent text-[#0e1620]'
             }`}
           >
@@ -55,9 +48,11 @@ export default function Layout() {
 
   return (
     <div className="flex min-h-[100dvh] flex-col">
-      <header className="sticky top-0 z-30 border-b border-line bg-bg/90 backdrop-blur">
+      <header className="sticky top-0 z-30 bg-bg/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3">
-          <Logo />
+          <NavLink to="/" className="shrink-0 leading-none" aria-label="RetroVault, accueil">
+            <Logo />
+          </NavLink>
 
           <nav className="hidden items-center gap-1 md:flex">
             {links.map((link) => (
@@ -66,7 +61,7 @@ export default function Layout() {
                 to={link.to}
                 end={link.end}
                 className={({ isActive }) =>
-                  `rounded-md px-3 py-2 text-sm font-semibold uppercase tracking-wide transition ${
+                  `nav-link px-3 py-2 text-sm font-semibold uppercase tracking-wide transition ${
                     isActive ? 'text-accent' : 'text-ink hover:text-ink-strong'
                   }`
                 }
@@ -94,6 +89,7 @@ export default function Layout() {
             Déconnexion
           </button>
         </div>
+        <div className="theme-stripe" aria-hidden="true" />
       </header>
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-28 pt-5 md:pb-10">

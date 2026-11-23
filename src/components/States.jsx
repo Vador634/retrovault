@@ -1,12 +1,10 @@
 // Petits composants d'état : vide, erreur, squelettes de chargement.
 
-export function EmptyState({ title, children, icon = '👾' }) {
+export function EmptyState({ title, children }) {
   return (
     <div className="panel flex flex-col items-center gap-2 px-6 py-10 text-center">
-      <span className="text-4xl" aria-hidden="true">
-        {icon}
-      </span>
-      <p className="font-pixel text-[0.65rem] leading-relaxed text-ink-strong">{title}</p>
+      <span className="theme-stripe mb-2 w-12" aria-hidden="true" />
+      <p className="font-display text-lg font-bold text-ink-strong">{title}</p>
       {children && <p className="max-w-sm text-sm text-muted">{children}</p>}
     </div>
   )
@@ -14,7 +12,7 @@ export function EmptyState({ title, children, icon = '👾' }) {
 
 export function ErrorMessage({ children, onRetry }) {
   return (
-    <div className="rounded-lg border border-[#c62828]/50 bg-[#c62828]/10 px-4 py-3 text-sm text-[#ff8a80]" role="alert">
+    <div className="rounded-lg border border-[#c62828]/50 bg-[#c62828]/10 px-4 py-3 text-sm text-[var(--danger-ink)]" role="alert">
       <p>{children}</p>
       {onRetry && (
         <button className="mt-2 font-semibold underline underline-offset-2" onClick={onRetry}>

@@ -24,7 +24,7 @@ function Chip({ active, onClick, children }) {
   return (
     <button
       onClick={onClick}
-      className={`shrink-0 rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
+      className={`shrink-0 rounded-[var(--radius-btn)] border px-3 py-1.5 text-xs font-semibold transition ${
         active ? 'border-accent bg-accent/15 text-ink-strong' : 'border-line text-muted hover:text-ink'
       }`}
     >
@@ -70,7 +70,7 @@ export default function ConsoleGames() {
 
   if (!entry || !console) {
     return (
-      <EmptyState title="Console introuvable" icon="🕹️">
+      <EmptyState title="Console introuvable">
         Elle a peut-être été retirée de ta collection. <Link to="/" className="text-accent underline">Retour à mes consoles</Link>
       </EmptyState>
     )
@@ -96,7 +96,7 @@ export default function ConsoleGames() {
         <div className="flex-1 p-4">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
-              <h1 className="font-pixel text-sm leading-relaxed text-ink-strong sm:text-base">{console.nom}</h1>
+              <h1 className="page-title">{console.nom}</h1>
               <p className="text-sm text-muted">
                 {entry.modele}
                 {entry.edition && ` · ${entry.edition}`} · {entry.etat}
@@ -104,7 +104,7 @@ export default function ConsoleGames() {
               </p>
             </div>
             <p className="shrink-0 text-right">
-              <span className="block font-pixel text-lg text-accent">{owned.length}</span>
+              <span className="block font-display text-2xl font-bold text-accent">{owned.length}</span>
               <span className="text-xs text-muted">{owned.length > 1 ? 'jeux' : 'jeu'}</span>
             </p>
           </div>
@@ -150,7 +150,7 @@ export default function ConsoleGames() {
                 <button className="btn btn-ghost !min-h-9 text-sm" onClick={() => setEditingConsole(true)}>
                   <Icon name="edit" size={16} /> Modifier
                 </button>
-                <button className="btn btn-ghost !min-h-9 text-sm text-[#ff8a80]" onClick={() => setConfirmRemove(true)}>
+                <button className="btn btn-ghost !min-h-9 text-sm text-[var(--danger-ink)]" onClick={() => setConfirmRemove(true)}>
                   <Icon name="trash" size={16} /> Retirer
                 </button>
               </>
@@ -160,13 +160,15 @@ export default function ConsoleGames() {
       </header>
 
       {/* Onglets + filtres */}
-      <div className="mb-3 grid grid-cols-2 gap-1 rounded-lg bg-panel/70 p-1">
+      <div className="tab-bar mb-3 grid grid-cols-2 gap-1 rounded-lg bg-panel/70 p-1" role="tablist">
         {[
-          ['possede', `🎮 Possédés (${owned.length})`],
-          ['recherche', `⭐ Recherchés (${wanted.length})`],
+          ['possede', `Possédés (${owned.length})`],
+          ['recherche', `Recherchés (${wanted.length})`],
         ].map(([value, label]) => (
           <button
             key={value}
+            role="tab"
+            aria-selected={tab === value}
             onClick={() => setTab(value)}
             className={`rounded-md py-2 text-sm font-semibold transition ${
               tab === value ? 'bg-panel-2 text-ink-strong' : 'text-muted'
@@ -217,7 +219,7 @@ export default function ConsoleGames() {
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-6">
         <button
           onClick={() => setSearching(true)}
-          className="group flex aspect-[3/4] flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-line text-muted transition hover:border-accent hover:text-accent hover:shadow-[0_0_20px_var(--glow)]"
+          className="group flex aspect-[3/4] flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-line text-muted transition hover:border-accent hover:text-accent"
         >
           <span className="grid h-12 w-12 place-items-center rounded-full bg-panel-2/60 transition group-hover:scale-110">
             <Icon name="plus" size={26} />

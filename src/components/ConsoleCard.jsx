@@ -8,10 +8,11 @@ export default function ConsoleCard({ entry, gameCount }) {
   if (!console) return null
 
   return (
-    <motion.div layout initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}>
+    <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}>
       <Link
         to={`/console/${entry.id}`}
-        className="group panel block overflow-hidden transition duration-200 hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-[0_0_24px_var(--glow)]"
+        draggable={false}
+        className="group panel block overflow-hidden transition duration-200 hover:-translate-y-0.5 hover:border-accent/60"
       >
         <div className="overflow-hidden">
           <ConsoleArt console={console} className="aspect-[5/3] transition duration-300 group-hover:scale-105" />
@@ -22,7 +23,7 @@ export default function ConsoleCard({ entry, gameCount }) {
             {entry.modele}
             {entry.edition && ` · ${entry.edition}`}
           </p>
-          <p className="mt-2 font-pixel text-[0.55rem] text-accent">
+          <p className="mt-2 label">
             {gameCount} {gameCount > 1 ? 'jeux' : 'jeu'}
           </p>
         </div>

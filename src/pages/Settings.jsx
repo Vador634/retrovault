@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { useSettings } from '../store/settings'
+import { useSettings, THEMES } from '../store/settings'
 import { useCurrentUser } from '../store/auth'
 import { useMyCollection, remplacerCollection } from '../store/collection'
 import { getConsole } from '../lib/consoles'
@@ -43,7 +43,7 @@ function readBackup(text) {
 }
 
 export default function Settings() {
-  const { theme, crt, noteScale, setTheme, setCrt, setNoteScale } = useSettings()
+  const { theme, noteScale, setTheme, setNoteScale } = useSettings()
   const user = useCurrentUser()
   const collection = useMyCollection()
   const fileInput = useRef(null)
@@ -70,29 +70,16 @@ export default function Settings() {
 
   return (
     <section className="mx-auto max-w-xl space-y-5">
-      <h1 className="font-pixel text-sm leading-relaxed text-ink-strong sm:text-base">Réglages</h1>
+      <h1 className="page-title">Réglages</h1>
 
       <div className="panel space-y-5 p-4">
         <h2 className="font-semibold text-ink-strong">Affichage</h2>
         <ChoiceGroup
-          label="Thème"
-          options={[
-            { value: 'sombre', label: '🌙 Sombre' },
-            { value: 'clair', label: '☀️ Clair' },
-          ]}
+          label="Thème console"
+          options={Object.entries(THEMES).map(([value, t]) => ({ value, label: t.label }))}
           value={theme}
           onChange={setTheme}
-          columns={2}
-        />
-        <ChoiceGroup
-          label="Effet écran CRT (thème sombre)"
-          options={[
-            { value: true, label: 'Activé' },
-            { value: false, label: 'Désactivé' },
-          ]}
-          value={crt}
-          onChange={setCrt}
-          columns={2}
+          columns={3}
         />
         <ChoiceGroup
           label="Noter les jeux…"
@@ -122,7 +109,7 @@ export default function Settings() {
         </div>
         <input ref={fileInput} type="file" accept="application/json,.json" className="hidden" onChange={handleFile} />
 
-        {importError && <p className="text-sm text-[#ff8a80]">{importError}</p>}
+        {importError && <p className="text-sm text-[var(--danger-ink)]">{importError}</p>}
 
         {pending && (
           <div className="rounded-lg border border-[#ef6c00]/50 bg-[#ef6c00]/10 p-3 text-sm">

@@ -27,13 +27,13 @@ export default function Wishlist() {
 
   return (
     <section>
-      <h1 className="font-pixel text-sm leading-relaxed text-ink-strong sm:text-base">Wishlist</h1>
+      <h1 className="page-title">Wishlist</h1>
       <p className="mb-5 text-sm text-muted">
         {total ? `${total} jeu${total > 1 ? 'x' : ''} à dénicher` : 'Les jeux que tu cherches encore.'}
       </p>
 
       {groups.length === 0 ? (
-        <EmptyState title="Wishlist vide" icon="⭐">
+        <EmptyState title="Wishlist vide">
           Depuis la page d'une console, appuie sur + et choisis « Je le recherche ». Pratique en magasin avec la recherche
           rapide !{' '}
           <Link to="/" className="text-accent underline">

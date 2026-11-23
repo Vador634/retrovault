@@ -1,42 +1,108 @@
 @import "tailwindcss";
 
 /*
-  Les couleurs passent par des variables CSS pour pouvoir basculer
-  entre le thème sombre (style Steam) et le thème clair sans dupliquer
-  toutes les classes Tailwind.
+  Trois thèmes, chacun inspiré d'une console. Tout passe par des variables CSS :
+  les composants utilisent bg-panel, text-accent… et c'est le thème posé sur
+  <html data-theme="..."> qui décide des vraies couleurs, des arrondis et des polices.
 */
-:root {
-  --bg: #171a21;
-  --panel: #1b2838;
-  --panel-2: #2a475e;
-  --accent: #66c0f4;
-  --accent-strong: #1a9fff;
-  --ink: #c7d5e0;
+
+/* GameCube (thème par défaut) : indigo, formes rondes, bouton A vert */
+:root,
+[data-theme='gamecube'] {
+  --bg: #15122d;
+  --panel: #241f4a;
+  --panel-2: #363070;
+  --accent: #b3a8ff;
+  --accent-strong: #7d6ef0;
+  --ink: #dcd8f5;
   --ink-strong: #ffffff;
-  --muted: #8f98a0;
-  --line: rgba(102, 192, 244, 0.15);
-  --glow: rgba(102, 192, 244, 0.35);
-  /* couleurs des graphiques (testées pour le daltonisme sur ce fond) */
+  --muted: #9a94c8;
+  --line: rgba(179, 168, 255, 0.18);
+  --glow: rgba(125, 110, 240, 0.4);
+  --danger-ink: #ff8a80;
+
+  --radius: 14px;
+  --radius-btn: 999px;
+  --btn-primary: #2faa52;
+  --btn-primary-ink: #ffffff;
+  --btn-primary-edge: #1d7a39;
+  --display-font: 'Rubik', system-ui, sans-serif;
+  --title-case: none;
+  --title-spacing: 0;
+  /* petits cubes en fond */
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='64' viewBox='0 0 56 64'%3E%3Cg fill='none' stroke='%23b3a8ff' stroke-opacity='0.07' stroke-width='1.2'%3E%3Cpath d='M28 4 52 18v28L28 60 4 46V18Z'/%3E%3Cpath d='M4 18l24 14 24-14M28 32v28'/%3E%3C/g%3E%3C/svg%3E");
+  --stripe: linear-gradient(90deg, #7d6ef0 0 70%, #2faa52 70% 80%, #e0484d 80% 90%, #f2c53d 90%);
+
   --series-1: #3987e5;
   --series-2: #d95926;
   --series-3: #199e70;
   color-scheme: dark;
 }
 
-[data-theme='clair'] {
-  --bg: #e7edf3;
-  --panel: #ffffff;
-  --panel-2: #d3e1ec;
-  --accent: #1a73b8;
-  --accent-strong: #0b5c9e;
-  --ink: #23313f;
-  --ink-strong: #0e1620;
-  --muted: #5d6c7b;
-  --line: rgba(26, 115, 184, 0.18);
-  --glow: rgba(26, 115, 184, 0.25);
-  --series-1: #2a78d6;
-  --series-2: #eb6834;
-  --series-3: #1baf7a;
+/* Xbox (2001) : noir, vert lime, angles nets et police "tech" */
+[data-theme='xbox'] {
+  --bg: #0a0c0a;
+  --panel: #131913;
+  --panel-2: #1f2a1e;
+  --accent: #9be31d;
+  --accent-strong: #5cb811;
+  --ink: #d3dccf;
+  --ink-strong: #ffffff;
+  --muted: #869480;
+  --line: rgba(155, 227, 29, 0.16);
+  --glow: rgba(155, 227, 29, 0.28);
+  --danger-ink: #ff8a80;
+
+  --radius: 4px;
+  --radius-btn: 4px;
+  --btn-primary: linear-gradient(180deg, #8fd321 0%, #4e9a0f 100%);
+  --btn-primary-ink: #0a0c0a;
+  --btn-primary-edge: #3a7409;
+  --display-font: 'Michroma', system-ui, sans-serif;
+  --title-case: uppercase;
+  --title-spacing: 0.04em;
+  /* halo vert en haut et quadrillage très léger */
+  --pattern: radial-gradient(ellipse 70% 40% at 50% -5%, rgba(120, 220, 20, 0.16), transparent 70%),
+    linear-gradient(rgba(155, 227, 29, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(155, 227, 29, 0.035) 1px, transparent 1px);
+  --pattern-size: auto, 32px 32px, 32px 32px;
+  --stripe: linear-gradient(90deg, transparent, #9be31d, transparent);
+
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  color-scheme: dark;
+}
+
+/* PlayStation : plastique gris clair, angles droits, les 4 couleurs des symboles */
+[data-theme='ps1'] {
+  --bg: #d5d3ce;
+  --panel: #ecebe7;
+  --panel-2: #c9c7c1;
+  --accent: #2b55c9;
+  --accent-strong: #1f3f99;
+  --ink: #2e2e33;
+  --ink-strong: #0f0f12;
+  --muted: #5e5d63;
+  --line: rgba(0, 0, 0, 0.14);
+  --glow: rgba(43, 85, 201, 0.22);
+  --danger-ink: #b3282d;
+
+  --radius: 2px;
+  --radius-btn: 2px;
+  --btn-primary: #2b55c9;
+  --btn-primary-ink: #ffffff;
+  --btn-primary-edge: #1a3a8f;
+  --display-font: 'Saira Semi Condensed', system-ui, sans-serif;
+  --title-case: uppercase;
+  --title-spacing: 0.06em;
+  /* fines rainures comme sur le capot de la console */
+  --pattern: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.025) 0 1px, transparent 1px 6px);
+  --stripe: linear-gradient(90deg, #3fae8c 0 25%, #e0484d 25% 50%, #4a7fe0 50% 75%, #d86fb6 75%);
+
+  --series-1: #2a5fd6;
+  --series-2: #d9532a;
+  --series-3: #1a8f5f;
   color-scheme: light;
 }
 
@@ -52,7 +118,10 @@
   --color-line: var(--line);
 
   --font-sans: 'Inter', system-ui, sans-serif;
-  --font-pixel: 'Press Start 2P', monospace;
+  --font-display: var(--display-font);
+  --radius-md: min(var(--radius), 8px);
+  --radius-lg: min(var(--radius), 10px);
+  --radius-xl: var(--radius);
 }
 
 html {
@@ -60,36 +129,54 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: var(--pattern);
+  background-size: var(--pattern-size, auto);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--font-sans);
   min-height: 100dvh;
 }
 
-/* Petit dégradé de fond, comme sur la page magasin de Steam */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(ellipse at top, var(--panel-2) 0%, transparent 60%);
-  opacity: 0.45;
-  pointer-events: none;
-}
-
 /* Dans le layer "components" pour que les classes Tailwind (hidden, px-…) puissent les surcharger */
 @layer components {
   .panel {
-    background: linear-gradient(160deg, var(--panel) 0%, color-mix(in srgb, var(--panel) 85%, var(--bg)) 100%);
+    background: var(--panel);
     border: 1px solid var(--line);
-    border-radius: 0.75rem;
+    border-radius: var(--radius);
+  }
+
+  .page-title {
+    font-family: var(--display-font);
+    font-weight: 700;
+    font-size: 1.35rem;
+    line-height: 1.3;
+    text-transform: var(--title-case);
+    letter-spacing: var(--title-spacing);
+    color: var(--ink-strong);
+  }
+
+  /* petit titre de section : "MON EXEMPLAIRE", "FICHE DU JEU"… */
+  .label {
+    font-family: var(--display-font);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+
+  /* bande de couleur sous l'en-tête, différente pour chaque thème */
+  .theme-stripe {
+    height: 3px;
+    background: var(--stripe);
   }
 
   .input {
     width: 100%;
     background: color-mix(in srgb, var(--bg) 70%, var(--panel));
     border: 1px solid var(--line);
-    border-radius: 0.5rem;
+    border-radius: min(var(--radius), 10px);
     padding: 0.7rem 0.85rem;
     color: var(--ink-strong);
     font-size: 1rem; /* 16px minimum, sinon iOS zoome sur le champ */
@@ -110,55 +197,198 @@ body::before {
     justify-content: center;
     gap: 0.5rem;
     min-height: 2.75rem;
-    padding: 0 1.1rem;
-    border-radius: 0.5rem;
+    padding: 0 1.2rem;
+    border-radius: var(--radius-btn);
     font-weight: 600;
     transition: filter 0.15s, transform 0.1s, background 0.15s;
     user-select: none;
   }
   .btn:active {
-    transform: scale(0.97);
+    transform: translateY(1px);
   }
   .btn:disabled {
     opacity: 0.5;
     pointer-events: none;
   }
+  /* le bouton principal a un "rebord" en bas, comme un vrai bouton de manette */
   .btn-primary {
-    background: linear-gradient(90deg, #47bfff 0%, #1a44c2 100%);
-    color: #fff;
+    background: var(--btn-primary);
+    color: var(--btn-primary-ink);
+    box-shadow: inset 0 -3px 0 var(--btn-primary-edge);
   }
   .btn-primary:hover {
-    filter: brightness(1.12);
+    filter: brightness(1.1);
   }
   .btn-ghost {
-    background: color-mix(in srgb, var(--panel-2) 55%, transparent);
+    background: color-mix(in srgb, var(--panel-2) 60%, transparent);
     color: var(--ink);
   }
   .btn-ghost:hover {
     background: var(--panel-2);
   }
   .btn-danger {
-    background: #a3262a;
+    background: #b3282d;
     color: #fff;
+    box-shadow: inset 0 -3px 0 #7c1519;
   }
   .btn-danger:hover {
-    filter: brightness(1.15);
+    filter: brightness(1.12);
   }
 }
 
-/* Effet CRT : lignes horizontales très discrètes par-dessus tout l'écran */
-.crt-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0px,
-    rgba(0, 0, 0, 0) 2px,
-    rgba(0, 0, 0, 0.09) 3px
-  );
-  mix-blend-mode: multiply;
+/*
+  Détails propres à chaque thème.
+  Toujours dans le layer "components" : les classes Tailwind gardent la priorité.
+*/
+@layer components {
+  /* ---------- GameCube : plastique brillant, tout est rond ---------- */
+  [data-theme='gamecube'] .panel {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--panel) 86%, #fff) 0%, var(--panel) 40%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 12px 30px -14px rgba(0, 0, 0, 0.7);
+  }
+  [data-theme='gamecube'] .btn-ghost {
+    background: rgba(179, 168, 255, 0.12);
+  }
+  [data-theme='gamecube'] .btn-ghost:hover {
+    background: rgba(179, 168, 255, 0.22);
+  }
+  /* petit cube devant les titres de page */
+  [data-theme='gamecube'] .page-title::before {
+    content: '';
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 0.45em;
+    vertical-align: -0.05em;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 29 9.5 16 17 3 9.5Z' fill='%23c9c0ff'/%3E%3Cpath d='M3 9.5 16 17v13L3 22.5Z' fill='%237d6ef0'/%3E%3Cpath d='M29 9.5 16 17v13l13-7.5Z' fill='%234b3fa3'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+  [data-theme='gamecube'] .nav-link {
+    border-radius: 999px;
+  }
+  [data-theme='gamecube'] .nav-link[aria-current='page'] {
+    background: var(--panel-2);
+    color: #fff;
+  }
+
+  /* ---------- Xbox : métal sombre, coins coupés, lueur verte ---------- */
+  [data-theme='xbox'] .panel {
+    /* petites équerres vertes dans deux coins, comme un écran de visée */
+    background:
+      linear-gradient(var(--accent), var(--accent)) left top / 16px 2px no-repeat,
+      linear-gradient(var(--accent), var(--accent)) left top / 2px 16px no-repeat,
+      linear-gradient(var(--accent), var(--accent)) right bottom / 16px 2px no-repeat,
+      linear-gradient(var(--accent), var(--accent)) right bottom / 2px 16px no-repeat,
+      linear-gradient(160deg, #182218 0%, #0e130e 100%);
+  }
+  [data-theme='xbox'] .panel:hover {
+    border-color: rgba(155, 227, 29, 0.4);
+  }
+  [data-theme='xbox'] .btn {
+    clip-path: polygon(9px 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%, 0 9px);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.8rem;
+  }
+  [data-theme='xbox'] .btn-primary {
+    box-shadow: inset 0 0 14px rgba(240, 255, 192, 0.35), inset 0 -3px 0 var(--btn-primary-edge);
+  }
+  [data-theme='xbox'] .btn-ghost {
+    background: rgba(155, 227, 29, 0.08);
+    border: 1px solid rgba(155, 227, 29, 0.22);
+  }
+  [data-theme='xbox'] .page-title::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 0.85em;
+    margin-right: 0.55em;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+  }
+  [data-theme='xbox'] .label {
+    text-shadow: 0 0 8px rgba(155, 227, 29, 0.45);
+  }
+  [data-theme='xbox'] .nav-link[aria-current='page'] {
+    box-shadow: inset 0 -2px 0 var(--accent);
+    text-shadow: 0 0 10px rgba(155, 227, 29, 0.6);
+  }
+
+  /* ---------- PlayStation : plastique gris, relief, boutons qui s'enfoncent ---------- */
+  [data-theme='ps1'] .panel {
+    box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12);
+  }
+  [data-theme='ps1'] .btn {
+    font-family: var(--display-font);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.55), inset -1px -2px 0 rgba(0, 0, 0, 0.28);
+  }
+  [data-theme='ps1'] .btn:active {
+    transform: none;
+    box-shadow: inset 1px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  [data-theme='ps1'] .btn-primary {
+    background: linear-gradient(180deg, #3c66dc 0%, #2447b0 100%);
+  }
+  [data-theme='ps1'] .btn-ghost {
+    background: #e2e0db;
+  }
+  [data-theme='ps1'] .input {
+    background: #f7f6f3;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.14), inset -1px -1px 0 #fff;
+  }
+  /* trait aux 4 couleurs sous les titres */
+  [data-theme='ps1'] .page-title::after {
+    content: '';
+    display: block;
+    width: 3.5rem;
+    height: 3px;
+    margin-top: 0.3rem;
+    background: var(--stripe);
+  }
+  [data-theme='ps1'] .nav-link[aria-current='page'] {
+    background: var(--panel-2);
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* Onglets (Connexion/Inscription, Possédés/Recherchés) : hors layer pour passer
+   devant les classes Tailwind posées sur les boutons */
+[data-theme='gamecube'] .tab-bar,
+[data-theme='gamecube'] .tab-bar [role='tab'] {
+  border-radius: 999px;
+}
+[data-theme='gamecube'] .tab-bar [aria-selected='true'] {
+  background: var(--accent-strong);
+  color: #fff;
+}
+[data-theme='xbox'] .tab-bar {
+  background: transparent;
+  border-bottom: 1px solid var(--line);
+  padding: 0;
+}
+[data-theme='xbox'] .tab-bar [role='tab'] {
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+[data-theme='xbox'] .tab-bar [aria-selected='true'] {
+  background: linear-gradient(0deg, rgba(155, 227, 29, 0.14), transparent);
+  box-shadow: inset 0 -2px 0 var(--accent);
+  color: var(--accent);
+}
+[data-theme='ps1'] .tab-bar {
+  background: var(--panel-2);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+[data-theme='ps1'] .tab-bar [role='tab'] {
+  font-family: var(--display-font);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+[data-theme='ps1'] .tab-bar [aria-selected='true'] {
+  background: var(--panel);
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 rgba(0, 0, 0, 0.2);
 }
 
 .skeleton {
@@ -170,18 +400,11 @@ body::before {
   );
   background-size: 200% 100%;
   animation: shimmer 1.3s infinite linear;
-  border-radius: 0.5rem;
+  border-radius: min(var(--radius), 8px);
 }
 @keyframes shimmer {
   from { background-position: 200% 0; }
   to { background-position: -200% 0; }
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
-.blink {
-  animation: blink 1.1s steps(1) infinite;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -196,8 +419,7 @@ body::before {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .skeleton,
-  .blink {
+  .skeleton {
     animation: none;
   }
 }

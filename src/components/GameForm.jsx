@@ -56,8 +56,8 @@ export default function GameForm({ initial, onSubmit, submitLabel = 'Ajouter', c
     <form onSubmit={handleSubmit} className="space-y-5">
       <ChoiceGroup
         options={[
-          { value: 'possede', label: '🎮 Je l’ai' },
-          { value: 'recherche', label: '⭐ Je le recherche' },
+          { value: 'possede', label: 'Je l’ai' },
+          { value: 'recherche', label: 'Je le recherche' },
         ]}
         value={form.statut}
         onChange={(statut) => set({ statut })}

@@ -52,7 +52,7 @@ export default function QuickSearch() {
         <Icon name="search" size={18} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted" />
         <input
           type="search"
-          className="input !rounded-full !py-2.5 !pl-10"
+          className="input !rounded-[var(--radius-btn)] !py-2.5 !pl-10"
           placeholder="Je l'ai déjà ? Tape un titre…"
           value={query}
           onChange={(e) => {
@@ -90,7 +90,7 @@ export default function QuickSearch() {
                           wanted ? 'bg-[#b8860b]/25' : 'bg-[#2e7d32]/30'
                         }`}
                       >
-                        {wanted ? '⭐' : '✔'}
+                        {wanted ? '★' : '✓'}
                       </span>
                       <span className="min-w-0 flex-1">
                         <span className="block truncate font-semibold text-ink-strong">{game.titre}</span>

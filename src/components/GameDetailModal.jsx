@@ -116,13 +116,13 @@ export default function GameDetailModal({ game, console, onClose }) {
     <div className="grid grid-cols-2 gap-2 sm:flex sm:justify-end">
       {wanted && (
         <button className="btn btn-primary col-span-2" onClick={() => setMode('found')}>
-          🎉 Je l'ai trouvé !
+          Je l'ai trouvé !
         </button>
       )}
       <button className="btn btn-ghost" onClick={() => setMode('edit')}>
         <Icon name="edit" size={18} /> Modifier
       </button>
-      <button className="btn btn-ghost text-[#ff8a80]" onClick={() => setConfirmDelete(true)}>
+      <button className="btn btn-ghost text-[var(--danger-ink)]" onClick={() => setConfirmDelete(true)}>
         <Icon name="trash" size={18} /> Supprimer
       </button>
     </div>
@@ -131,7 +131,7 @@ export default function GameDetailModal({ game, console, onClose }) {
   return (
     <Modal title={game.titre} onClose={onClose} footer={footer} wide>
       <div className="sm:flex sm:gap-5">
-        <Cover src={game.image} title={game.titre} className="mx-auto mb-4 aspect-[3/4] w-40 shrink-0 rounded-lg sm:mx-0 sm:w-48" />
+        <Cover src={game.image} title={game.titre} className="mx-auto mb-4 aspect-[3/4] w-40 shrink-0 self-start rounded-lg sm:mx-0 sm:w-48" />
 
         <div className="min-w-0 flex-1 space-y-5">
           <div>
@@ -141,7 +141,7 @@ export default function GameDetailModal({ game, console, onClose }) {
           </div>
 
           <section className="panel space-y-4 p-4">
-            <h4 className="font-pixel text-[0.6rem] text-accent">{wanted ? 'Ma recherche' : 'Mon exemplaire'}</h4>
+            <h4 className="label">{wanted ? 'Ma recherche' : 'Mon exemplaire'}</h4>
 
             {!wanted && (
               <>
@@ -173,7 +173,7 @@ export default function GameDetailModal({ game, console, onClose }) {
           </section>
 
           <section>
-            <h4 className="mb-3 font-pixel text-[0.6rem] text-accent">Fiche du jeu</h4>
+            <h4 className="mb-3 label">Fiche du jeu</h4>
             <RawgDetails rawgId={game.rawgId} />
           </section>
         </div>

@@ -125,7 +125,7 @@ export default function AddConsoleModal({ entry, onClose }) {
           <ChoiceGroup
             label="Avec sa boîte ?"
             options={[
-              { value: true, label: '📦 En boîte' },
+              { value: true, label: 'En boîte' },
               { value: false, label: 'Sans boîte' },
             ]}
             value={form.enBoite}

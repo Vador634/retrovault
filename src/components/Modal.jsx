@@ -49,7 +49,7 @@ export default function Modal({ title, onClose, onBack, children, footer, wide =
               <Icon name="back" />
             </button>
           )}
-          <h2 className="min-w-0 flex-1 truncate font-pixel text-[0.7rem] leading-relaxed text-ink-strong sm:text-xs">
+          <h2 className="min-w-0 flex-1 truncate font-display text-base font-bold text-ink-strong">
             {title}
           </h2>
           <button className="btn btn-ghost !px-2" onClick={onClose} aria-label="Fermer">
